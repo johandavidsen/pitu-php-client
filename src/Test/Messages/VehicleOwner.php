@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @since v0.1.0
  */
@@ -23,7 +24,7 @@ class VehicleOwner implements ToXMLInterface
     /**
      * @param mixed $firstName
      */
-    public function setFirstName($firstName)
+    public function setFirstName($firstName): VehicleOwner
     {
         $this->firstName = $firstName;
         return $this;
@@ -32,7 +33,7 @@ class VehicleOwner implements ToXMLInterface
     /**
      * @param mixed $lastName
      */
-    public function setLastName($lastName)
+    public function setLastName($lastName): VehicleOwner
     {
         $this->lastName = $lastName;
         return $this;
@@ -41,7 +42,7 @@ class VehicleOwner implements ToXMLInterface
     /**
      * @param mixed $dateOfBirth
      */
-    public function setDateOfBirth($dateOfBirth)
+    public function setDateOfBirth($dateOfBirth): VehicleOwner
     {
         $this->dateOfBirth = $dateOfBirth;
         return $this;
@@ -50,7 +51,7 @@ class VehicleOwner implements ToXMLInterface
     /**
      * @param mixed $personCode
      */
-    public function setPersonCode($personCode)
+    public function setPersonCode($personCode): VehicleOwner
     {
         $this->personCode = $personCode;
         return $this;
@@ -59,9 +60,15 @@ class VehicleOwner implements ToXMLInterface
     /**
      * @return SimpleXMLElement
      */
-    public function toXML()
+    public function toXML(): SimpleXMLElement
     {
-        $xml = new SimpleXMLElement('<v1:getVehicleOwnerByPersonalcode></v1:getVehicleOwnerByPersonalcode>', LIBXML_NOERROR, false, 'v1', true);
+        $xml = new SimpleXMLElement(
+            '<v1:getVehicleOwnerByPersonalcode></v1:getVehicleOwnerByPersonalcode>',
+            LIBXML_NOERROR,
+            false,
+            'v1',
+            true
+        );
         $xml->addChild('personalcode', $this->personCode);
         return $xml;
     }

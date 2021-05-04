@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class VehicleOwnerTest
+ *
  * @package CodeBureau\Pitu\Unit
  */
 class VehicleOwnerTest extends TestCase
@@ -20,7 +21,7 @@ class VehicleOwnerTest extends TestCase
      * @test
      * @throws Exception
      */
-    public function test_xml_converter()
+    public function xmlConverter()
     {
         $vehicleOwner = new VehicleOwner();
         $vehicleOwner

@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class TestServiceTest
+ *
  * @package CodeBureau\Pitu
  */
 class TestServiceTest extends TestCase
@@ -19,7 +20,7 @@ class TestServiceTest extends TestCase
      * @covers \CodeBureau\Pitu\Test\TestService::getVehicleOwnerByCPR
      * @test
      */
-    public function GetVehicleOwnerByCPR()
+    public function getVehicleOwnerByCPR()
     {
         $service = new TestService();
         $owner = $service->getVehicleOwnerByCPR("11111");

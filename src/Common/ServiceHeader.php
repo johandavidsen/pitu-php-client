@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @since v0.1.0
  */
@@ -95,7 +96,7 @@ class ServiceHeader implements ToXMLInterface
      */
     public function toXMLString()
     {
-        $domXml =dom_import_simplexml($this->toXML());
+        $domXml = dom_import_simplexml($this->toXML());
         return $domXml->ownerDocument->saveXML($domXml->ownerDocument->documentElement);
     }
 }

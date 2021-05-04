@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @since v0.1.0
  */
@@ -23,7 +24,7 @@ class TestService
      * @param $cpr
      * @return VehicleOwner
      */
-    public function getVehicleOwnerByCPR($cpr)
+    public function getVehicleOwnerByCPR($cpr): VehicleOwner
     {
         // Create envelope
         $env = new Envelope();

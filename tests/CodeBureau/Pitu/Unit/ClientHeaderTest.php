@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class ClientHeaderTest
+ *
  * @package CodeBureau\Pitu\Unit
  */
 class ClientHeaderTest extends TestCase
@@ -19,7 +20,7 @@ class ClientHeaderTest extends TestCase
      * @covers \CodeBureau\Pitu\Common\ClientHeader::toXMLString
      * @test
      */
-    public function test_xml_converter()
+    public function xmlConverter()
     {
         $clientHeader = new ClientHeader();
         $clientHeader

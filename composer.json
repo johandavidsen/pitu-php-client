@@ -1,30 +1,42 @@
 {
-    "name": "codebureau/pitu-php-client",
-    "description": "This project enables access to Greenlands Pitu network.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Jóhan H. Dam-Davidsen",
-            "email": "johan@code-bureau.gl"
-        }
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "larapack/dd": "^1.1",
-        "friendsofphp/php-cs-fixer": "^2.18"
-    },
-    "autoload": {
-        "classmap": [
-            "src/"
-        ],
-        "psr-4": {
-            "CodeBureau\\PituService\\": "src/"
-        }
-    },
-    "require": {
-        "vlucas/phpdotenv": "^5.3",
-        "guzzlehttp/guzzle": "^7.3",
-        "sabre/xml": "^2.2"
+  "name": "codebureau/pitu-php-client",
+  "description": "This project enables access to Greenlands Pitu network.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jóhan H. Dam-Davidsen",
+      "email": "johan@code-bureau.gl"
     }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "larapack/dd": "^1.1",
+    "squizlabs/php_codesniffer": "^3.6"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "psr-4": {
+      "CodeBureau\\Pitu\\": "src/"
+    }
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.3",
+    "guzzlehttp/guzzle": "^7.3",
+    "sabre/xml": "^2.2",
+    "ext-simplexml": "*",
+    "ext-dom": "*",
+    "ext-libxml": "*"
+  },
+  "scripts": {
+    "lint": [
+      "phpcs ."
+    ],
+    "fix": [
+      "phpcbf ."
+    ],
+    "make-pot": "wp i18n make-pot . lang/inussuk.pot"
+  }
 }

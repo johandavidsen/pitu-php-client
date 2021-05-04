@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @since v0.1.0
  */
@@ -103,14 +104,14 @@ class Envelope
         // Add ProtocolVersion
         $header->addChild('xmlns:xro:protocolVersion', $this->protocolVersion);
 
-        $this->xml_append($header, $this->clientHeader->toXML());
+        $this->xmlAppend($header, $this->clientHeader->toXML());
 
         // Client
-        $this->xml_append($header, $this->serviceHeader->toXML());
+        $this->xmlAppend($header, $this->serviceHeader->toXML());
 
         // Body
         $bodyElement = $env->addChild('xmlns:soapenv:Body');
-        $this->xml_append($bodyElement, $this->body->toXML());
+        $this->xmlAppend($bodyElement, $this->body->toXML());
 
         return $env->asXML();
     }
@@ -119,7 +120,7 @@ class Envelope
      * @param SimpleXMLElement $to
      * @param SimpleXMLElement $from
      */
-    private function xml_append(SimpleXMLElement $to, SimpleXMLElement $from)
+    private function xmlAppend(SimpleXMLElement $to, SimpleXMLElement $from)
     {
         $toDom = dom_import_simplexml($to);
         $fromDom = dom_import_simplexml($from);

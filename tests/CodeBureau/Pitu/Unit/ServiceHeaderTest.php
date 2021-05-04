@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class ServiceHeaderTest
+ *
  * @package CodeBureau\Pitu\Unit
  */
 class ServiceHeaderTest extends TestCase
@@ -20,7 +21,7 @@ class ServiceHeaderTest extends TestCase
      * @test
      * @throws Exception
      */
-    public function test_xml_converter()
+    public function xmlConverter()
     {
         $serviceHeader = new ServiceHeader();
         $serviceHeader
